@@ -10,17 +10,17 @@ import java.net.URISyntaxException;
 
 import static utils.Constants.*;
 
-public class FirefoxPictureDownloaderTest {
+public class GooglePictureDownloaderTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("selenide.browser", "firefox");
+        System.setProperty("selenide.browser", "chrome");
         Configuration.fileDownload = FileDownloadMode.FOLDER;
         Configuration.downloadsFolder = DOWNLOAD_FOLDER;
     }
 
     @Test
-    public void shouldDownloadPictureInFirefox() throws InterruptedException, IOException, URISyntaxException {
+    public void shouldDownloadPicture() throws InterruptedException, IOException, URISyntaxException {
         GoogleSearchPage googleSearchPage = new GoogleSearchPage();
         googleSearchPage.goToGoogleSearch();
         googleSearchPage.searchUser(USER);
